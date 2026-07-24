@@ -1,0 +1,4 @@
+﻿method,anomaly_count,anomaly_rate
+IQR,20317,0.007838
+EWMA,26244,0.010125
+Isolation Forest,20736,0.008

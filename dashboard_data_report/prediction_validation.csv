@@ -1,0 +1,13 @@
+﻿prediction_window,model,with_powerfactor_auc,without_powerfactor_auc,auc_drop
+5분 이내,LightGBM,0.6455,0.4995,0.14599999999999996
+10분 이내,LightGBM,0.648,0.4994,0.1486
+30분 이내,LightGBM,0.6532,0.5083,0.14490000000000003
+5분 상태전환,LightGBM,0.6332,0.4919,0.14129999999999998
+5분 이내,XGBoost,0.6461,0.503,0.1431
+10분 이내,XGBoost,0.6464,0.5013,0.1451
+30분 이내,XGBoost,0.6507,0.5054,0.14529999999999998
+5분 상태전환,XGBoost,0.6397,0.5116,0.1281
+5분 이내,Logistic Regression,0.6476,0.5089,0.13869999999999993
+10분 이내,Logistic Regression,0.6591,0.5004,0.15870000000000006
+30분 이내,Logistic Regression,0.657,0.5012,0.15580000000000005
+5분 상태전환,Logistic Regression,0.6582,0.5061,0.1521

@@ -1,0 +1,7 @@
+﻿feature,contribution,feature_label
+current_unbalance_pct,0.01335235485121894,전류 불평형률
+voltage_unbalance_pct,0.012375846730927897,전압 불평형률
+powerfactor_avg,0.011516080336292422,평균 역률
+activePower,0.009484730324069657,유효전력
+reactive_to_active_ratio,0.008743238041165335,무효/유효 전력비
+reactivePowerLagging,0.0059530317966939306,무효전력

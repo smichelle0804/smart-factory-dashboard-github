@@ -1,0 +1,3 @@
+﻿pair,a_only,both,b_only,neither,jaccard
+IQR ↔ EWMA,0,20317,5927,2565757,0.7741579027587258
+EWMA ↔ Isolation Forest,10065,16179,4557,2561200,0.5252751534041102
