@@ -168,11 +168,65 @@ st.markdown(
     [data-testid="stRadio"] > div {{gap:.35rem;}}
     [data-testid="stRadio"] label {{
         background:#111B35;border:1px solid {COLORS['border']};border-radius:5px;
-        padding:5px 10px;margin:0;color:#DCE7F8;
+        padding:5px 10px;margin:0;color:#FFFFFF !important;opacity:1 !important;
     }}
     [data-testid="stRadio"] label:has(input:checked) {{
         background:#21487F;border-color:#3C6EB0;
     }}
+
+    /* -----------------------------------------------------
+       High-contrast widget labels
+       ----------------------------------------------------- */
+    [data-testid="stRadio"] label,
+    [data-testid="stRadio"] label *,
+    [data-testid="stRadio"] label p,
+    [data-testid="stWidgetLabel"],
+    [data-testid="stWidgetLabel"] *,
+    [data-testid="stWidgetLabel"] p,
+    [data-testid="stDateInput"] label,
+    [data-testid="stDateInput"] label *,
+    [data-testid="stSelectbox"] label,
+    [data-testid="stSelectbox"] label *,
+    [data-testid="stTextInput"] label,
+    [data-testid="stTextInput"] label * {{
+        color: #FFFFFF !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* Radio navigation text */
+    [data-testid="stRadio"] label span,
+    [data-testid="stRadio"] label div {{
+        color: #FFFFFF !important;
+        opacity: 1 !important;
+    }}
+
+    /* Date, selectbox, and text-input values */
+    [data-baseweb="select"] *,
+    [data-baseweb="input"] *,
+    [data-testid="stDateInput"] input,
+    [data-testid="stTextInput"] input {{
+        color: #FFFFFF !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* Disabled field text, including 집중 관리 설비 */
+    input:disabled,
+    textarea:disabled,
+    [aria-disabled="true"],
+    [data-disabled="true"] {{
+        color: #FFFFFF !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+    }}
+
+    /* Selectbox arrow */
+    [data-baseweb="select"] svg {{
+        fill: #FFFFFF !important;
+        color: #FFFFFF !important;
+    }}
+
     </style>
     """,
     unsafe_allow_html=True,
@@ -346,15 +400,45 @@ if page == "통합 관제":
         high_hours = set(hourly_view.loc[hourly_view["is_high_frequency"] == 1, "datetime_hour"])
         points = points[points["datetime_hour"].isin(high_hours)]
 
-    latest = view.iloc[-1]
-    latest_points = points[points["datetime"] <= latest["datetime"]]
-    latest_event_count = int(latest.get("event_count", 0))
+    candidate_events = event_view[
+        event_view["max_model_agreement"] >= 2
+    ].sort_values("start_datetime", ascending=False)
+
+    if len(candidate_events) > 0:
+        event_options = (
+            candidate_events["start_datetime"]
+            .dt.strftime("%Y-%m-%d %H:%M:%S")
+            .tolist()
+        )
+
+        selected_event = st.selectbox(
+            "통합 상태 확인 시점",
+            event_options,
+        )
+
+        selected_event_time = pd.to_datetime(selected_event)
+
+        nearest_index = (
+            view ["datetime"] - selected_event_time.floor("min")
+        ).abs().idxmin()
+
+        latest = view.loc[nearest_index]
+    else :
+        latest = view.iloc[-1]
+
+    latesst_points = points[
+        points["datetime"] <= latest["datetime"]
+    ]
+
+    latest_event_count = int(
+        latest.get("event_count", 0)
+    )
 
     cards = st.columns(6)
     with cards[0]:
         kpi("집중 관리 설비", "15번", "예비건조기", "red")
     with cards[1]:
-        kpi("전체 설비 IF 이상률", "1.62%", "702 / 43,201구간 · 전체 1위", "teal")
+        kpi("전체 설비 IF 이상률", "1.62%", "702 / 43,201구간 · 설비들 중 1위", "teal")
     with cards[2]:
         kpi("IQR 탐지", "20,317건", "예비건조기 0.78%", "")
     with cards[3]:
