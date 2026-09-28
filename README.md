@@ -32,17 +32,3 @@ The project focused on three main tasks:
 
 Because the original dataset was extremely large, the analysis also used resampling and aggregation at different time intervals for efficient monitoring and visualization.
 
----
-
-## Methodology
-
-### 1. Equipment Screening
-
-The first stage used a common anomaly-detection pipeline across all 13 machines.
-
-The features were standardized using `StandardScaler`, followed by an **Isolation Forest** with:
-
-```python
-n_estimators = 200
-contamination = 0.01
-https://appapppy-smartfactorydashboard.streamlit.app/
