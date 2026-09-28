@@ -5,7 +5,7 @@ English Below!
 **green그린그림 · 제5회 BDAI 채용 연계 데이터 분석 공모전**  
 한국어 
 
-[대시보드 열기](https://appapppy-npeaynqsm3spwhkgjxzpxq.streamlit.app/)
+[대시보드 열기](https://appapppy-smartfactorydashboard.streamlit.app/)
 
 Streamlit Community Cloud에서 앱이 휴면 상태라면 접속자가 화면의 **“Yes, get this app back up!”** 버튼으로 다시 열 수 있습니다.
 
@@ -47,16 +47,16 @@ Streamlit Community Cloud에서 앱이 휴면 상태라면 접속자가 화면�
 **Team green그린그림 · 5th BDAI Data Analytics Competition**  
 English 
 
-[Open dashboard](https://appapppy-npeaynqsm3spwhkgjxzpxq.streamlit.app/)
+[Open dashboard](https://appapppy-smartfactorydashboard.streamlit.app/)
 
 (If the app is asleep on Streamlit Community Cloud, a visitor may click **“Yes, get this app back up!”** to reopen it.)
 
 This Streamlit prototype helps users identify **which equipment and time periods to inspect first** in power data from 13 equipment types. It brings equipment-level anomaly rates, IQR/EWMA/Isolation Forest decisions, power-factor trends, and recurring events into one monitoring view.
 
-## How to use it
+## How to use
 
-1. Select a date range and equipment in **Integrated monitoring**.
-2. Review the **equipment anomaly ranking** to find a candidate for inspection. In this dataset, the preliminary dryer (equipment 15) is the priority candidate.
+1. Select a date range and equipment in **Integrated monitoring(통합관제)**.
+2. Review the **equipment anomaly ranking(설비별 비효율 순위)** to find a candidate for inspection. In this dataset, the preliminary dryer (equipment 15) is the priority candidate.
 3. Inspect the power-factor trend and select a timestamp to see **which of IQR, EWMA, and Isolation Forest flagged it**.
 4. Use hourly EWMA counts and the recent event log to prioritize recurring periods for field inspection.
 
