@@ -1,9 +1,13 @@
+English Below!
+
 # 스마트팩토리 전력 이상 탐지 대시보드
 
 **green그린그림 · 제5회 BDAI 채용 연계 데이터 분석 공모전**  
-한국어 (English Below)
+한국어 
 
 [대시보드 열기](https://appapppy-npeaynqsm3spwhkgjxzpxq.streamlit.app/)
+
+Streamlit Community Cloud에서 앱이 휴면 상태라면 접속자가 화면의 **“Yes, get this app back up!”** 버튼으로 다시 열 수 있습니다.
 
 13종 설비의 전력 데이터에서 **어느 설비와 시점을 먼저 확인할지** 보여주는 Streamlit 관제 프로토타입입니다. 설비별 이상률과 IQR·EWMA·Isolation Forest의 탐지 결과를 한 화면에서 비교하고, 역률 추이와 반복 이벤트를 확인할 수 있습니다.
 
@@ -35,17 +39,17 @@
 
 이 저장소의 대시보드는 **제공된 과거 RTU 데이터와 분석 결과를 조회하는 프로토타입**입니다. 현장 RTU 스트림과 자동 연결된 상용 실시간 관제 시스템은 아닙니다. 정답 라벨과 현장 점검 기록이 없어 화면의 이상 판정을 실제 고장이나 확인된 절감 효과로 해석할 수 없습니다.
 
-Streamlit Community Cloud에서 앱이 휴면 상태라면 접속자가 화면의 **“Yes, get this app back up!”** 버튼으로 다시 열 수 있습니다.
+
+
 
 # Smart Factory Power Anomaly Monitoring Dashboard
-
-
-
 
 **Team green그린그림 · 5th BDAI Data Analytics Competition**  
 English 
 
 [Open dashboard](https://appapppy-npeaynqsm3spwhkgjxzpxq.streamlit.app/)
+
+(If the app is asleep on Streamlit Community Cloud, a visitor may click **“Yes, get this app back up!”** to reopen it.)
 
 This Streamlit prototype helps users identify **which equipment and time periods to inspect first** in power data from 13 equipment types. It brings equipment-level anomaly rates, IQR/EWMA/Isolation Forest decisions, power-factor trends, and recurring events into one monitoring view.
 
@@ -77,4 +81,4 @@ The dashboard uses RTU power data collected from December 1, 2024 to April 30, 2
 
 This dashboard is a **prototype for reviewing supplied historical RTU data and analysis results**. It is not a production system connected to a live RTU stream. Without ground-truth fault labels and field inspection records, its alerts cannot establish an actual failure or measured savings.
 
-If the app is asleep on Streamlit Community Cloud, a visitor can click **“Yes, get this app back up!”** to reopen it.
+
